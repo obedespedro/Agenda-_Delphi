@@ -1,0 +1,28 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 300
+  Width = 560
+  object conexao: TFDConnection
+    Params.Strings = (
+      'Database=agenda'
+      'User_Name=root'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 72
+    Top = 48
+  end
+  object tbContatos: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = conexao
+    TableName = 'agenda.contatos'
+    Left = 72
+    Top = 128
+  end
+  object dsContatos: TDataSource
+    DataSet = tbContatos
+    Left = 64
+    Top = 200
+  end
+end
